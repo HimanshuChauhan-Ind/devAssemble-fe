@@ -15,16 +15,15 @@ const Login = () => {
         { email, password },
         { withCredentials: true }
       );
-
       dispatch(addUser(response.data));
       return navigate("/");
     } catch (err) {
-      throw new Error("ERROR: " + err.message);
+      throw new Error("ERROR: " + err);
     }
   };
 
   return (
-    <div className="flex items-center justify-center mt-49">
+    <div className="flex mt-[10vh] justify-center">
       <div className="card w-96 bg-base-200 shadow-sm">
         <div className="card-body">
           <div className="flex justify-center">

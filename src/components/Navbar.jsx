@@ -1,9 +1,22 @@
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { SERVER_URL } from "../utils/constants";
+import axios from "axios";
+import { removeUser } from "../utils/userSlice";
 
 const Navbar = () => {
   const user = useSelector((state) => state.user);
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    try {
+      await axios.post(SERVER_URL + "/logOut", { withCredentials: true });
+      dispatch(removeUser());
+      return navigate("/login");
+    } catch (err) {
+      console.log("Error: " + err.message);
+    }
+  };
   return (
     <div className="navbar bg-base-200 shadow-sm ">
       <div className="navbar-start">
@@ -42,7 +55,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-center">
-        <Link to="/" className="btn btn-ghost text-xl">
+        <Link to={user ? "/" : "/login"} className="btn btn-ghost text-xl">
           Dev Assemble
         </Link>
       </div>
@@ -68,7 +81,11 @@ const Navbar = () => {
             <span className="badge badge-xs badge-primary indicator-item"></span>
           </div>
         </button>
-        {user && <button className="btn pr-4">LogOut</button>}
+        {user && (
+          <button onClick={handleLogout} className="btn pr-4">
+            LogOut
+          </button>
+        )}
       </div>
     </div>
   );
