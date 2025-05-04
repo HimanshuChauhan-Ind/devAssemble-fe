@@ -15,6 +15,7 @@ const Body = () => {
     try {
       if (!user) {
         navigate("/login");
+        return;
       }
       const response = await axios.get(SERVER_URL + "/profile/view", {
         withCredentials: true,
