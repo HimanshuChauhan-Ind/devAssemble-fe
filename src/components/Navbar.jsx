@@ -48,7 +48,7 @@ const Navbar = () => {
               <a>Homepage</a>
             </li>
             <li>
-              <a>Portfolio</a>
+              <Link to={"/edit"}>Proflie</Link>
             </li>
             <li>
               <a>About</a>
