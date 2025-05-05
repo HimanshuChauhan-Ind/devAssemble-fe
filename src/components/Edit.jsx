@@ -15,10 +15,12 @@ const Edit = () => {
     }
   }, []);
   return (
-    <div className="flex justify-center items-center gap-10">
-      <EditProfile data={user} />
-      <FeedCard data={user} />
-    </div>
+    user && (
+      <div className="flex justify-center items-center gap-10">
+        <EditProfile data={user} />
+        <FeedCard data={user} />
+      </div>
+    )
   );
 };
 
