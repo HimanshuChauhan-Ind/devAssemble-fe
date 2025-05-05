@@ -45,13 +45,13 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>Homepage</a>
+              <Link to={"/"}>Homepage</Link>
             </li>
             <li>
               <Link to={"/edit"}>Proflie</Link>
             </li>
             <li>
-              <a>About</a>
+              <Link to={"/connections"}>Connections</Link>
             </li>
           </ul>
         </div>
