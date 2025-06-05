@@ -6,6 +6,7 @@ import appStore from "./utils/appStore";
 import Feed from "./components/Feed";
 import Edit from "./components/Edit";
 import Connections from "./components/Connections";
+import Request from "./components/Request";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Route path="/edit" element={<Edit />}></Route>
               <Route path="/login" element={<Login />}></Route>
               <Route path="/connections" element={<Connections />}></Route>
+              <Route path="/request" element={<Request />}></Route>
             </Route>
           </Routes>
         </BrowserRouter>
