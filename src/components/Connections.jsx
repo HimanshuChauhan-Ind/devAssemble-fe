@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { SERVER_URL } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addConnections } from "../utils/connectionSlice";
-import ConnectionCard from "./connectionCard";
+import ConnectionCard from "./ConnectionCard";
 import { useNavigate } from "react-router-dom";
 
 const Connections = () => {
