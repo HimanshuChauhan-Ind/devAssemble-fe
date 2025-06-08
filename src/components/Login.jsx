@@ -17,7 +17,7 @@ const Login = () => {
     if (isLoggedIn) {
       try {
         const response = await axios.post(
-          "http://localhost:3000/signIn",
+          SERVER_URL + "signIn",
           { email, password },
           { withCredentials: true }
         );
